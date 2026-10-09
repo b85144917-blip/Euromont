@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cenovnik | Euromont</title>
+
+    <link rel="apple-touch-icon" href="assets/img/euromontlogo.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/euromontlogo.ico">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <style>
+        #cenovnik-table {
+            width: 100%;
+            table-layout: fixed;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+
+        #cenovnik-table caption {
+            color: #f3af32fd;
+            caption-side: top;
+            font-size: 1.75rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        #cenovnik-table caption span {
+            display: block;
+            color: #212934;
+            font-size: 0.95rem;
+            font-weight: 400;
+        }
+
+        #cenovnik-table thead th {
+            background-color: #f3af32fd;
+            border-color: #f3af32fd;
+            color: #fff;
+            white-space: nowrap;
+        }
+
+        #cenovnik-table thead th:nth-child(5) {
+            text-align: right;
+        }
+
+        #cenovnik-table tbody td,
+        #cenovnik-table tfoot td {
+            padding: 0.75rem;
+            vertical-align: middle;
+            overflow-wrap: anywhere;
+        }
+
+        #cenovnik-table .price {
+            color: #f3af32fd;
+            font-weight: 900;
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 575.98px) {
+            #cenovnik-table {
+                font-size: 0.75rem;
+            }
+
+            #cenovnik-table th,
+            #cenovnik-table td {
+                padding: 0.45rem 0.3rem;
+            }
+
+            #cenovnik-table thead th {
+                white-space: normal;
+            }
+
+            #cenovnik-table thead th:nth-child(1),
+            #cenovnik-table tbody th,
+            #cenovnik-table thead th:nth-child(2),
+            #cenovnik-table tbody td:nth-child(2),
+            #cenovnik-table thead th:nth-child(3),
+            #cenovnik-table tbody td:nth-child(3),
+            #cenovnik-table thead th:nth-child(4),
+            #cenovnik-table tbody td:nth-child(4) {
+                text-align: center;
+            }
+
+            #cenovnik-table thead th:nth-child(4) {
+                font-size: 0.7rem;
+                white-space: nowrap;
+            }
+
+            #cenovnik-table thead th:nth-child(5) {
+                text-align: center;
+            }
+
+            #cenovnik-table .price {
+                text-align: center;
+            }
+
+            #cenovnik-table th:first-child {
+                width: 7%;
+            }
+
+            #cenovnik-table th:nth-child(2) {
+                width: 34%;
+            }
+
+            #cenovnik-table th:nth-child(3) {
+                width: 12%;
+                white-space: nowrap;
+            }
+
+            #cenovnik-table th:nth-child(4) {
+                width: 24%;
+            }
+
+            #cenovnik-table th:nth-child(5) {
+                width: 23%;
+            }
+
+            #cenovnik-table tbody td:nth-child(3) {
+                white-space: nowrap;
+            }
+
+            #cenovnik-table .price {
+                font-size: 0.75rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand text-success logo h1 align-self-center" href="pocetna.html">
+                <img class="img-logo" src="assets/img/apple-icon.png" alt="Euromont">
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#templatemo_main_nav" aria-controls="templatemo_main_nav" aria-expanded="false"
+                aria-label="Otvori navigaciju">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse flex-fill d-lg-flex justify-content-lg-between"
+                id="templatemo_main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="pocetna.html">Početna</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="proizvodi.html">Proizvodi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cenovnik.html">Cenovnik</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="onama.html">O nama</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="kontakt.html">Kontakt</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="bg-light py-5">
+            <div class="container">
+                <div class="table-responsive shadow-sm rounded">
+                    <table id="cenovnik-table" class="table table-striped table-hover mb-0">
+                        <caption>
+                            Cenovnik PVC stolarije
+                            <span>Cene su sa uračunatim PDV-om i ugradnjom.</span>
+                        </caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Proizvod</th>
+                                <th scope="col">Tip</th>
+                                <th scope="col">Dimenzije (cm)</th>
+                                <th scope="col" class="text-right">Cena</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>PVC jednokrilni</td>
+                                <td>JP</td>
+                                <td>50 x 60</td>
+                                <td class="price">37 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>PVC jednokrilni</td>
+                                <td>JP</td>
+                                <td>60 x 60</td>
+                                <td class="price">42 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>PVC jednokrilni</td>
+                                <td>JP</td>
+                                <td>60 x 80</td>
+                                <td class="price">52 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>PVC jednokrilni</td>
+                                <td>JP</td>
+                                <td>80 x 80</td>
+                                <td class="price">65 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>PVC jednokrilni</td>
+                                <td>JP</td>
+                                <td>80 x 100</td>
+                                <td class="price">75 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td>PVC jednokrilni</td>
+                                <td>JP</td>
+                                <td>100 x 100</td>
+                                <td class="price">82 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">7</th>
+                                <td>PVC jednokrilni</td>
+                                <td>JP</td>
+                                <td>80 x 120</td>
+                                <td class="price">87 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">8</th>
+                                <td>PVC jednokrilni</td>
+                                <td>JP</td>
+                                <td>100 x 120</td>
+                                <td class="price">98 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">9</th>
+                                <td>PVC jednokrilni</td>
+                                <td>JP</td>
+                                <td>120 x 120</td>
+                                <td class="price">110 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">10</th>
+                                <td>PVC jednokrilni</td>
+                                <td>JP</td>
+                                <td>80 x 140</td>
+                                <td class="price">95 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">11</th>
+                                <td>PVC jednokrilni</td>
+                                <td>JP</td>
+                                <td>100 x 140</td>
+                                <td class="price">108 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">12</th>
+                                <td>PVC jednokrilni</td>
+                                <td>JP</td>
+                                <td>120 x 140</td>
+                                <td class="price">122 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">13</th>
+                                <td>PVC balkonac</td>
+                                <td>JP</td>
+                                <td>140 x 140</td>
+                                <td class="price">134 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">14</th>
+                                <td>PVC balkonac</td>
+                                <td>JP</td>
+                                <td>80 x 200</td>
+                                <td class="price">124 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">15</th>
+                                <td>PVC balkonac</td>
+                                <td>JP</td>
+                                <td>70 x 210</td>
+                                <td class="price">118 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">16</th>
+                                <td>PVC balkonac</td>
+                                <td>JP</td>
+                                <td>80 x 210</td>
+                                <td class="price">129 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">17</th>
+                                <td>PVC balkonac</td>
+                                <td>JP</td>
+                                <td>90 x 210</td>
+                                <td class="price">137 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">18</th>
+                                <td>PVC balkonac</td>
+                                <td>JP</td>
+                                <td>80 x 220</td>
+                                <td class="price">133 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">19</th>
+                                <td>PVC dvokrilni</td>
+                                <td>DP</td>
+                                <td>120 x 120</td>
+                                <td class="price">133 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">20</th>
+                                <td>PVC dvokrilni</td>
+                                <td>DP</td>
+                                <td>140 x 120</td>
+                                <td class="price">143 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">21</th>
+                                <td>PVC dvokrilni</td>
+                                <td>DP</td>
+                                <td>160 x 120</td>
+                                <td class="price">157 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">22</th>
+                                <td>PVC dvokrilni</td>
+                                <td>DP</td>
+                                <td>180 x 120</td>
+                                <td class="price">169 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">23</th>
+                                <td>PVC dvokrilni</td>
+                                <td>DP</td>
+                                <td>200 x 120</td>
+                                <td class="price">180 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">24</th>
+                                <td>PVC dvokrilni</td>
+                                <td>DP</td>
+                                <td>120 x 140</td>
+                                <td class="price">147 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">25</th>
+                                <td>PVC dvokrilni</td>
+                                <td>DP</td>
+                                <td>140 x 140</td>
+                                <td class="price">159 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">26</th>
+                                <td>PVC dvokrilni</td>
+                                <td>DP</td>
+                                <td>160 x 140</td>
+                                <td class="price">174 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">27</th>
+                                <td>PVC dvokrilni</td>
+                                <td>DP</td>
+                                <td>180 x 140</td>
+                                <td class="price">187 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">28</th>
+                                <td>PVC dvokrilni</td>
+                                <td>DP</td>
+                                <td>200 x 140</td>
+                                <td class="price">199 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">29</th>
+                                <td>PVC balkonac</td>
+                                <td>DP</td>
+                                <td>140 x 210</td>
+                                <td class="price">219 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">30</th>
+                                <td>PVC balkonac</td>
+                                <td>DP</td>
+                                <td>160 x 210</td>
+                                <td class="price">237 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">31</th>
+                                <td>PVC balkonac</td>
+                                <td>DP</td>
+                                <td>180 x 210</td>
+                                <td class="price">255 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">32</th>
+                                <td>PVC dvodelni</td>
+                                <td>&mdash;</td>
+                                <td>120 x 120</td>
+                                <td class="price">110 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">33</th>
+                                <td>PVC dvodelni</td>
+                                <td>&mdash;</td>
+                                <td>140 x 120</td>
+                                <td class="price">123 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">34</th>
+                                <td>PVC dvodelni</td>
+                                <td>&mdash;</td>
+                                <td>160 x 120</td>
+                                <td class="price">134 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">35</th>
+                                <td>PVC dvodelni</td>
+                                <td>&mdash;</td>
+                                <td>180 x 120</td>
+                                <td class="price">145 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">36</th>
+                                <td>PVC dvodelni</td>
+                                <td>&mdash;</td>
+                                <td>200 x 120</td>
+                                <td class="price">155 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">37</th>
+                                <td>PVC dvodelni</td>
+                                <td>&mdash;</td>
+                                <td>120 x 140</td>
+                                <td class="price">124 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">38</th>
+                                <td>PVC dvodelni</td>
+                                <td>&mdash;</td>
+                                <td>140 x 140</td>
+                                <td class="price">136 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">39</th>
+                                <td>PVC dvodelni</td>
+                                <td>&mdash;</td>
+                                <td>160 x 140</td>
+                                <td class="price">149 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">40</th>
+                                <td>PVC dvodelni</td>
+                                <td>&mdash;</td>
+                                <td>180 x 140</td>
+                                <td class="price">161 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">41</th>
+                                <td>PVC dvodelni</td>
+                                <td>&mdash;</td>
+                                <td>200 x 140</td>
+                                <td class="price">172 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">42</th>
+                                <td>PVC dvodelni</td>
+                                <td>&mdash;</td>
+                                <td>140 x 210</td>
+                                <td class="price">189 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">43</th>
+                                <td>PVC dvodelni</td>
+                                <td>&mdash;</td>
+                                <td>160 x 210</td>
+                                <td class="price">205 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">44</th>
+                                <td>PVC dvodelni</td>
+                                <td>&mdash;</td>
+                                <td>180 x 210</td>
+                                <td class="price">222 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">45</th>
+                                <td>PVC sobna vrata</td>
+                                <td>&mdash;</td>
+                                <td>70 x 200</td>
+                                <td class="price">161 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">46</th>
+                                <td>PVC sobna vrata</td>
+                                <td>&mdash;</td>
+                                <td>80 x 200</td>
+                                <td class="price">174 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">47</th>
+                                <td>PVC sobna vrata</td>
+                                <td>&mdash;</td>
+                                <td>90 x 200</td>
+                                <td class="price">186 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">48</th>
+                                <td>PVC sobna vrata</td>
+                                <td>&mdash;</td>
+                                <td>100 x 200</td>
+                                <td class="price">186 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">49</th>
+                                <td>Vrata karolai, 3D šarke</td>
+                                <td>&mdash;</td>
+                                <td>100 x 200</td>
+                                <td class="price">219 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">50</th>
+                                <td>Vrata karolai, 3D šarke</td>
+                                <td>&mdash;</td>
+                                <td>110 x 210</td>
+                                <td class="price">231 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">51</th>
+                                <td>Vrata karolai, 3D šarke</td>
+                                <td>&mdash;</td>
+                                <td>140 x 210</td>
+                                <td class="price">319 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">52</th>
+                                <td>Vrata panel, 3D šarke</td>
+                                <td>&mdash;</td>
+                                <td>100 x 200</td>
+                                <td class="price">319 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">53</th>
+                                <td>Vrata panel, 3D šarke</td>
+                                <td>&mdash;</td>
+                                <td>100 x 210</td>
+                                <td class="price">319 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">54</th>
+                                <td>Vrata panel, 3D šarke</td>
+                                <td>&mdash;</td>
+                                <td>110 x 210</td>
+                                <td class="price">319 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">55</th>
+                                <td>Vrata panel, 3D šarke</td>
+                                <td>&mdash;</td>
+                                <td>130 x 210</td>
+                                <td class="price">469 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">56</th>
+                                <td>Vrata panel, 3D šarke</td>
+                                <td>&mdash;</td>
+                                <td>140 x 210</td>
+                                <td class="price">469 €</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">57</th>
+                                <td>Vrata panel, 3D šarke</td>
+                                <td>&mdash;</td>
+                                <td>160 x 210</td>
+                                <td class="price">481 €</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Start Footer -->
+    <footer class="bg-dark" id="tempaltemo_footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">Kontakt</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li>
+                        <li>
+                            <i class="fas fa-map-marker-alt fa-fw"></i>
+                            <a class="text-decoration-none"
+                                href="https://www.google.com/maps/place/EUROMONT/@42.5452582,21.8991098,19.25z/data=!4m6!3m5!1s0x13551f836cbdadc9:0x7a6708a9bc7d835!8m2!3d42.5450889!4d21.8997555!16s%2Fg%2F11_txzfk5?entry=ttu"
+                                target="_blank">Trg bratstva
+                                jedinstva 25/3, Vranje</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-fw"></i>
+                            <a class="text-decoration-none" href="tel:065 555 4449">065 555
+                                4449</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope fa-fw"></i>
+                            <a class="text-decoration-none" href="mailto:euromont@gmail.com">euromont@gmail.com</a>
+                        </li>
+
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Proizvodi</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="stolarija.html">Stolarija</a></li>
+                        <li><a class="text-decoration-none" href="roletne.html">Roletne</a></li>
+                        <li><a class="text-decoration-none" href="komarnici.html">Komarnici</a></li>
+                        <li><a class="text-decoration-none" href="zebra_zavese.html">Zebra
+                                zavese</a></li>
+                        <li><a class="text-decoration-none" href="rolo_zavese.html">Rolo zavese</a></li>
+                        <li><a class="text-decoration-none" href="trakaste_zavese.html">Trakaste
+                                zavese</a></li>
+                        <li><a class="text-decoration-none" href="venecijaneri.html">Venecijaneri</a></li>
+                        <li><a class="text-decoration-none" href="garazna_vrata.html">Garažna
+                                vrata</a></li>
+                        <li><a class="text-decoration-none" href="tende.html">Tende</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Mapa
+                        sajta</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="pocetna.html">Početna</a></li>
+                        <li><a class="text-decoration-none" href="proizvodi.html">Proizvodi</a></li>
+                        <li><a class="text-decoration-none" href="cenovnik.html">Cenovnik</a></li>
+                        <li><a class="text-decoration-none" href="onama.html">O
+                                nama</a></li>
+                        <li><a class="text-decoration-none" href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="row text-light mb-4">
+                <div class="col-12 mb-3">
+                    <div class="w-100 my-3 border-top border-light"></div>
+                </div>
+                <div class="col-auto me-auto">
+                    <ul class="list-inline text-left footer-icons">
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="http://facebook.com/"><i
+                                    class="fab fa-facebook-f fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank"
+                                href="https://www.instagram.com/"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="w-100 bg-black py-3">
+            <div class="container">
+                <div class="row pt-2">
+                    <div class="col-12">
+                        <p class="text-left text-light">
+                            Copyright &copy; 2024 Euromont
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!-- End Footer -->
+
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

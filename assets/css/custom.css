@@ -1,0 +1,226 @@
+.google-map {
+    padding-bottom: 30%;
+    position: relative;
+    height: 300px;
+}
+
+.google-map iframe {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+}
+
+.row {
+    justify-content: center;
+    /* Horizontally center */
+}
+
+.carousel-item-height {
+    height: auto;
+    /* Adjust the height as per your requirement */
+}
+
+
+/* Default styles */
+#carouselVideoExample .carousel-item {
+  height: 700px; /* Set the default height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Hide overflow content */
+}
+
+#carouselVideoExample video {
+  width: 100%; /* Set the width to 100% */
+  height: 700px; /* Set the default height */
+  object-fit: fill;
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 768px) {
+  #carouselVideoExample .carousel-item {
+    height: 400px; /* Adjust height for smaller screens */
+  }
+
+  #carouselVideoExample video {
+    height: 400px; /* Adjust video height for smaller screens */
+  }
+}
+
+/* Media query for larger screens */
+@media only screen and (min-width: 1200px) {
+  #carouselVideoExample .carousel-item {
+    height: 700px; /* Adjust height for larger screens */
+  }
+
+  #carouselVideoExample video {
+    height: 700px; /* Adjust video height for larger screens */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.services .icon i {
+    color: #f3af32
+}
+
+
+
+.services {
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.services.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.card.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+#gallery {
+    padding-top: 40px;
+    @media screen and (min-width: 991px) {
+      padding: 60px 30px 0 30px;
+    }
+  }
+  
+  .img-wrapper {
+    position: relative;
+    margin-top: 15px;
+    img {
+      width: 100%;
+      height: 300px;
+    }
+  }
+  .img-overlay {
+    background: rgba(0,0,0,0.7);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    i {
+      color: #fff;
+      font-size: 3em;
+    }
+  }
+  
+  #overlay {
+    background: rgba(0,0,0,0.7);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    
+    -webkit-user-select: none;
+    -moz-user-select: none;    
+    -ms-user-select: none; 
+    user-select: none; 
+    img {
+      margin: 0;
+      width: 80%;
+      height: auto;
+      object-fit: contain;
+      padding: 5%;
+      @media screen and (min-width:768px) {
+          width: 60%;
+      }
+      @media screen and (min-width:1200px) {
+          width: 50%;
+      }
+    }
+  }
+  
+  #nextButton {
+    color: #fff;
+    font-size: 2em;
+    transition: opacity 0.8s;
+    &:hover {
+      opacity: 0.7;
+    }
+    @media screen and (min-width:768px) {
+      font-size: 3em;
+    }
+  }
+  
+  #prevButton {
+    color: #fff;
+    font-size: 2em;
+    transition: opacity 0.8s;
+    &:hover {
+      opacity: 0.7;
+    }
+    @media screen and (min-width:768px) {
+      font-size: 3em;
+    }
+  }
+  
+  #exitButton {
+    color: #fff;
+    font-size: 2em;
+    transition: opacity 0.8s;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    &:hover {
+      opacity: 0.7;
+    }
+    @media screen and (min-width:768px) {
+      font-size: 3em;
+    }
+  }
+
+  .icon-wrapper {
+    width: 20px; /* Adjust width as needed */
+    height: 20px; /* Adjust height as needed */
+    display: inline-flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin-right: 10px; /* Adjust margin as needed */
+}
+
+.specs{
+  list-style-type: disc;
+}
+
+#templatemo_main_nav .navbar-nav .nav-link {
+  font-size: 17px;
+  font-weight: 600 !important;
+  letter-spacing: 0.3px;
+}
+
+#templatemo_main_nav .navbar-nav .nav-link[href="kontakt.html"] {
+  color: #f3af32fd;
+}
