@@ -4,6 +4,7 @@
 
 /* ===== Opšte ===== */
 .row { justify-content: center; }
+html, body { overflow-x: clip; }   /* zaštita: ništa ne sme da pravi horizontalni skrol na telefonu */
 .specs { list-style-type: disc; }
 
 /* ===== Navigacija ===== */
@@ -12,8 +13,14 @@
 #templatemo_main_nav .navbar-nav .nav-link[href="kontakt.html"] { color: #f3af32fd; }
 @media (min-width: 768px) { #templatemo_main_nav .navbar-nav { max-width: 600px; } }
 
+/* ===== Slajder na telefonu: manje praznog prostora oko teksta i slike ===== */
+@media (max-width: 575px) {
+    #template-mo-zay-hero-carousel .row.p-5 { padding: 1.5rem .75rem !important; }
+    #template-mo-zay-hero-carousel .h2 { font-size: 1.25rem; }
+}
+
 /* ===== Animacija pri skrolovanju (custom.js dodaje .active) ===== */
-.services { opacity: 0; transform: translateX(20px); transition: opacity .5s ease-out, transform .5s ease-out; }
+.services { opacity: 0; transform: translateY(20px); transition: opacity .5s ease-out, transform .5s ease-out; }
 .services.active { opacity: 1; transform: translateX(0); }
 .services .icon i { color: #f3af32; }
 .card { opacity: 0; transform: translateY(20px); transition: opacity .5s ease-out, transform .5s ease-out; }
@@ -22,6 +29,7 @@
 
 /* ===== Galerija radova (detaljan izgled je u gallery-preview.css) ===== */
 #gallery { padding-top: 40px; }
+#gallery > .row { margin-left: 0; margin-right: 0; }   /* naslov galerije nije u .container – bez ovoga .row viri 12px van ekrana */
 @media screen and (min-width: 991px) { #gallery { padding: 60px 30px 0; } }
 .img-wrapper { position: relative; margin-top: 15px; }
 .img-wrapper img { width: 100%; height: 300px; }
