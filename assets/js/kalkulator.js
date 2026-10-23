@@ -125,13 +125,12 @@
     else if (!Number.isInteger(q) || q < 1 || q > 100) greska = 'Količina mora biti ceo broj od 1 do 100.';
     if (greska) return { greska };
     const m2 = Math.max(s * vs / 1e4, C.minPovrsinaM2), F = C.faktoriKrila;
-    let fs = 0, dp = 0, kf = 0;
-    S.L.rows.forEach((r, i) => {
-      r.cols.forEach((c, j) => { if (otvara(c.o)) kf += r.h * c.w; fs += r.h * c.w * (c.o === 'F' ? F.fiks : c.o[0] === 'S' ? F.klizno : F.krilo); if (j) dp += r.h * vs / 100; });
-      if (i) dp += s / 100;
+    let fs = 0, kf = 0;
+    S.L.rows.forEach((r) => {
+      r.cols.forEach((c) => { if (otvara(c.o)) kf += r.h * c.w; fs += r.h * c.w * (c.o === 'F' ? F.fiks : c.o[0] === 'S' ? F.klizno : F.krilo); });
     });
     const osn = m2 * sys.cenaPoM2 * t.faktor * fs, m2r = Math.max(s * v / 1e4, C.roletneMinM2);
-    const redovi = [['Osnovna stolarija', osn], ['Prečke', dp * C.precka.cenaPoM], ['Boja / dekor: ' + bo.naziv, osn * bo.dopuna], ['Staklo: ' + st.naziv, m2 * (t.udeo || C.udeoStakla) * st.doplataPoM2],
+    const redovi = [['Osnovna stolarija', osn], ['Boja / dekor: ' + bo.naziv, osn * bo.dopuna], ['Staklo: ' + st.naziv, m2 * (t.udeo || C.udeoStakla) * st.doplataPoM2],
       [ro.naziv, kut ? ro.poM2 * m2r + ro.fiksno : 0], [ko.naziv, ko.poM2 ? ko.poM2 * Math.max(m2 * (kf || 1), C.komarniciMinM2) : 0]];
     const delovi = [t.naziv, sys.naziv, `${s} × ${v} cm`, bo.naziv, st.naziv];
     if (kut) delovi.push(ro.naziv.toLowerCase());

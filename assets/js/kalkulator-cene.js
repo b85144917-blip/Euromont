@@ -10,7 +10,6 @@ window.KALKULATOR_CENE = {
   minPovrsinaM2: 0.5,               // najmanja površina koja se obračunava (m²)
   udeoStakla: 0.75,                 // deo površine elementa koji je staklo (doplata za staklo se računa na to)
   roletnaKutijaCm: 20,              // kada se izabere roletna, ovoliko cm visine ide na kutiju (oduzima se od stolarije)
-  precka: { cenaPoM: 9 },           // cena prečke po metru dužine
   // Faktor cene po tipu polja (množi cenu po m² te površine):
   faktoriKrila: { krilo: 1, fiks: 0.75, klizno: 1.5 },
 
