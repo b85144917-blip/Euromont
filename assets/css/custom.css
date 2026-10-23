@@ -1,0 +1,29 @@
+/* ===== Mapa (kontakt) ===== */
+.google-map { padding-bottom: 30%; position: relative; height: 300px; }
+.google-map iframe { height: 100%; width: 100%; left: 0; top: 0; position: absolute; }
+
+/* ===== Opšte ===== */
+.row { justify-content: center; }
+.specs { list-style-type: disc; }
+
+/* ===== Navigacija ===== */
+#templatemo_main_nav .navbar-nav .nav-link { font-size: 17px; font-weight: 600 !important; letter-spacing: .3px; }
+#templatemo_main_nav .navbar-nav .nav-link.active { color: #f3af32fd; }
+#templatemo_main_nav .navbar-nav .nav-link[href="kontakt.html"] { color: #f3af32fd; }
+@media (min-width: 768px) { #templatemo_main_nav .navbar-nav { max-width: 600px; } }
+
+/* ===== Animacija pri skrolovanju (custom.js dodaje .active) ===== */
+.services { opacity: 0; transform: translateX(20px); transition: opacity .5s ease-out, transform .5s ease-out; }
+.services.active { opacity: 1; transform: translateX(0); }
+.services .icon i { color: #f3af32; }
+.card { opacity: 0; transform: translateY(20px); transition: opacity .5s ease-out, transform .5s ease-out; }
+.card.active { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) { .services, .card { opacity: 1; transform: none; transition: none; } }
+
+/* ===== Galerija radova (detaljan izgled je u gallery-preview.css) ===== */
+#gallery { padding-top: 40px; }
+@media screen and (min-width: 991px) { #gallery { padding: 60px 30px 0; } }
+.img-wrapper { position: relative; margin-top: 15px; }
+.img-wrapper img { width: 100%; height: 300px; }
+.img-overlay { background: rgba(0, 0, 0, .7); width: 100%; height: 100%; position: absolute; top: 0; left: 0; display: flex; justify-content: center; align-items: center; opacity: 0; }
+.img-overlay i { color: #fff; font-size: 3em; }
