@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kalkulator cene | Euromont</title>
+    <meta name="description" content="Izaberite element, unesite mere i odmah vidite okvirnu cenu PVC i ALU stolarije.">
+
+    <link rel="apple-touch-icon" href="assets/img/euromontlogo.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/euromontlogo.ico">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="assets/css/kalkulator.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand text-success logo h1 align-self-center" href="pocetna.html">
+                <img class="img-logo" src="assets/img/apple-icon.png" alt="Logo Euromont">
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#templatemo_main_nav" aria-controls="templatemo_main_nav" aria-expanded="false"
+                aria-label="Otvorite meni">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse flex-fill d-lg-flex justify-content-lg-between"
+                id="templatemo_main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="pocetna.html">Početna</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="proizvodi.html">Proizvodi</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="kalkulator.html" aria-current="page">Kalkulator</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="onama.html">O nama</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="kontakt.html">Kontakt</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- /Header -->
+
+    <main>
+        <section class="bg-light py-5 kalk">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <h1 class="h2 text-success logo">Kalkulator cene stolarije</h1>
+                    <p class="mb-0">Izaberite element, unesite mere i odmah vidite cenu. <span id="datum"></span></p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-8">
+                        <div class="kalk-card">
+                            <div class="kalk-h"><b>01</b><strong>Sistem i tip elementa</strong></div>
+                            <div class="kalk-seg" id="sistemi"></div>
+                            <div class="kalk-tabs mt-3" id="tabovi"></div>
+                            <div class="kalk-grid mt-3" id="tipovi"></div>
+
+                            <div class="kalk-h"><b>02</b><strong>Mere i boja</strong></div>
+                            <div class="row g-3">
+                                <div class="col-4"><label for="sirina">Širina (cm)</label><input id="sirina" type="number" class="form-control" inputmode="numeric"></div>
+                                <div class="col-4"><label for="visina">Visina (cm)</label><input id="visina" type="number" class="form-control" inputmode="numeric"></div>
+                                <div class="col-4"><label for="kolicina">Količina</label><input id="kolicina" type="number" class="form-control" value="1" min="1" max="100" inputmode="numeric"></div>
+                            </div>
+                            <p id="greska" class="text-danger mt-2 mb-0" role="alert"></p>
+                            <div class="mt-3 mb-2">Boja / dekor</div>
+                            <div class="kalk-sws" id="boje"></div>
+                            <span class="kalk-note">Bela je osnovna cena. Za druge boje i dekore računa se doplata, prikazana u zbiru.</span>
+
+                            <div class="kalk-h"><b>03</b><strong>Staklo, roletna i komarnik</strong></div>
+                            <div class="kalk-opts" id="stakla"></div>
+                            <span class="kalk-note" id="staklaNote"></span>
+                            <div class="row g-3 mt-1">
+                                <div class="col-md-6"><label for="roletna">Roletna</label><select id="roletna" class="form-select"></select></div>
+                                <div class="col-md-6"><label for="komarnik">Komarnik</label><select id="komarnik" class="form-select"></select></div>
+                            </div>
+                            <span class="kalk-note" id="opcijeNote"></span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="kalk-side">
+                            <div class="kalk-card kalk-pv">
+                                <div class="mb-2"><span class="kalk-note">Izabrana pozicija</span></div>
+                                <div id="pvSkica"></div>
+                                <div class="text-center mt-2"><strong id="pvNaslov"></strong><br><span class="kalk-note" id="pvInfo"></span></div>
+                                <div class="kalk-sum mt-3"><div id="pvRedovi"></div><div id="pvCena"></div></div>
+                                <button id="dodaj" type="button" class="btn btn-success text-white w-100 mt-3">+ Dodaj poziciju</button>
+                            </div>
+                            <div class="kalk-card">
+                                <strong class="h3 logo d-block mb-2">Vaše pozicije</strong>
+                                <ul id="pozicije" class="list-unstyled mb-0"></ul>
+                                <p id="prazno" class="mb-0">Dodajte prvu poziciju. Spisak se čuva u ovom pregledaču, pa se možete vratiti kasnije.</p>
+                                <div class="kalk-total"><span>Ukupno</span><strong id="ukupno" class="price">0,00 €</strong></div>
+                                <a id="posalji" class="btn btn-success text-white w-100 mt-3 disabled" href="#">Pošalji upit mejlom</a>
+                                <button id="stampaj" type="button" class="btn btn-outline-secondary w-100 mt-2" disabled>Štampaj ponudu</button>
+                                <a id="pozovi" class="btn btn-outline-secondary w-100 mt-2" href="#">Pozovite nas</a>
+                                <button id="isprazni" type="button" class="btn btn-link text-danger w-100 mt-1" hidden>Isprazni listu</button>
+                                <span class="kalk-note" id="napomena"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark" id="site_footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">Kontakt</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt fa-fw"></i>
+                            <a class="text-decoration-none" href="https://www.google.com/maps?q=42.5450889,21.8997555"
+                                target="_blank" rel="noopener noreferrer">EUROMONT PR, Trg bratstva jedinstva 25/3, Vranje</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-fw"></i>
+                            <a class="text-decoration-none" href="tel:+381655554449">065 555 4449</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope fa-fw"></i>
+                            <a class="text-decoration-none" href="mailto:euromont@gmail.com">euromont@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Proizvodi</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li>
+                            <a class="text-decoration-none" href="stolarija.html">Stolarija</a>
+                        </li>
+                        <li>
+                            <a class="text-decoration-none" href="roletne.html">Roletne</a>
+                        </li>
+                        <li>
+                            <a class="text-decoration-none" href="komarnici.html">Komarnici</a>
+                        </li>
+                        <li>
+                            <a class="text-decoration-none" href="zebra_zavese.html">Zebra zavese</a>
+                        </li>
+                        <li>
+                            <a class="text-decoration-none" href="rolo_zavese.html">Rolo zavese</a>
+                        </li>
+                        <li>
+                            <a class="text-decoration-none" href="trakaste_zavese.html">Trakaste zavese</a>
+                        </li>
+                        <li>
+                            <a class="text-decoration-none" href="venecijaneri.html">Venecijaneri</a>
+                        </li>
+                        <li>
+                            <a class="text-decoration-none" href="garazna_vrata.html">Garažna vrata</a>
+                        </li>
+                        <li>
+                            <a class="text-decoration-none" href="tende.html">Tende</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Mapa sajta</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li>
+                            <a class="text-decoration-none" href="pocetna.html">Početna</a>
+                        </li>
+                        <li>
+                            <a class="text-decoration-none" href="proizvodi.html">Proizvodi</a>
+                        </li>
+                        <li>
+                            <a class="text-decoration-none" href="kalkulator.html">Kalkulator</a>
+                        </li>
+                        <li>
+                            <a class="text-decoration-none" href="onama.html">O nama</a>
+                        </li>
+                        <li>
+                            <a class="text-decoration-none" href="kontakt.html">Kontakt</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row text-light mb-4">
+                <div class="col-12 mb-3">
+                    <div class="w-100 my-3 border-top border-light"></div>
+                </div>
+                <div class="col-auto me-auto">
+                    <ul class="list-inline text-left footer-icons">
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" href="https://www.facebook.com/" target="_blank"
+                                rel="noopener noreferrer" aria-label="Facebook">
+                                <i class="fab fa-facebook-f fa-lg fa-fw"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" href="https://www.instagram.com/" target="_blank"
+                                rel="noopener noreferrer" aria-label="Instagram">
+                                <i class="fab fa-instagram fa-lg fa-fw"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-100 bg-black py-3">
+            <div class="container">
+                <div class="row pt-2">
+                    <div class="col-12">
+                        <p class="text-left text-light mb-0">Copyright &copy; 2024–2026 Euromont</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- /Footer -->
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/kalkulator-cene.js"></script>
+    <script src="assets/js/kalkulator.js"></script>
+</body>
+
+</html>
